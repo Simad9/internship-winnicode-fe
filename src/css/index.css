@@ -1,5 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
+/* Fonts */
+@theme {
+  --font-ws: "Work Sans", sans-serif;
+  --font-mw: "Merriweather", serif;
+}
+
+/* Colors */
 @theme {
   --color-lm-primary: #fff;
   --color-lm-bg: #f8f8f8;
@@ -7,11 +15,11 @@
   --color-dm-primary: #212121;
   --color-dm-bg: #111;
   --color-dm-text: #f8f8f8;
-  --color-grey: #efefef;
-  --color-grey-text: #6b6b6b;
-  --color-heading-accs: #38B6FF;
-  --color-kategori-accs: #FF66C4;
-  --color-acc: #14B30A;
-  --color-delete: #B42B12;
-  --color-edit: #FFC107;
+  --color-abu: #efefef;
+  --color-abu-text: #6b6b6b;
+  --color-heading-accs: #38b6ff;
+  --color-kategori-accs: #ff66c4;
+  --color-acc: #14b30a;
+  --color-delete: #b42b12;
+  --color-edit: #ffc107;
 }
