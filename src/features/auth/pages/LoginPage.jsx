@@ -11,11 +11,11 @@ function LoginPage() {
       <img src={logo} alt="Logo WinniCode" className='mb-2' />
 
       {/* CONTAINER */}
-      <section className='bg-lm-primary p-4 rounded-sm flex flex-col justify-center gap-4 w-full'>
+      <section className='bg-lm-primary p-4 rounded-sm flex flex-col justify-center gap-4 w-full md:w-8/12 lg:w-8/12 shadow-lg'>
         {/* HEADING */}
         <div className='text-center text-lm-text flex flex-col items-center justify-center'>
-          <h1 className='text-bold font-base font-ws font-medium text-2xl'>Selamat Datang</h1>
-          <p className='font-mw  text-sm w-3/4'>Untuk mendapatkan fitur lain anda harus login terlebih dahulu</p>
+          <h1 className='text-bold font-base font-ws font-medium text-2xl md:text-4xl '>Selamat Datang</h1>
+          <p className='font-mw  text-sm w-3/4 md:w-7/12 lg:w-5/12 md:text-base'>Untuk mendapatkan fitur lain anda harus login terlebih dahulu</p>
         </div>
         {/* FORM */}
         <form action="">
@@ -58,7 +58,7 @@ function LoginPage() {
           </div>
         </form>
 
-        <p className='text-sm text-center font-mw font-normal'>Belum Punya Akun? <Link to={"/register"} className="font-bold">Daftar Sekarang</Link></p>
+        <p className='text-sm md:text-base text-center font-mw font-normal'>Belum Punya Akun? <Link to={"/register"} className="font-bold">Daftar Sekarang</Link></p>
       </section>
     </div>
   );
