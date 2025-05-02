@@ -11,7 +11,7 @@ function LoginPage() {
       <img src={logo} alt="Logo WinniCode" className='mb-2' />
 
       {/* CONTAINER */}
-      <section className='bg-lm-primary p-4 rounded-sm flex flex-col justify-center gap-4 w-full md:w-8/12 lg:w-8/12 shadow-lg'>
+      <section className='bg-lm-primary p-4 rounded-sm flex flex-col justify-center gap-4 w-full md:w-8/12 lg:w-4/12 shadow-lg'>
         {/* HEADING */}
         <div className='text-center text-lm-text flex flex-col items-center justify-center'>
           <h1 className='text-bold font-base font-ws font-medium text-2xl md:text-4xl '>Selamat Datang</h1>
