@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Kategori from '../components/Kategori'
 
-function homePage() {
+function HomePage() {
   return (
     <>
       <section className='flex flex-col bg-lm-bg px-7'>
@@ -23,4 +23,4 @@ function homePage() {
   )
 }
 
-export default homePage
+export default HomePage
