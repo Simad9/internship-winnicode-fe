@@ -17,9 +17,9 @@ Pake extension chrome Mobile Simulator
 ### News
 
 - [ ] Homepage
-- [ ] Another News Page
+- [x] Another News Page
 - [ ] Detail Page
-- [ ] Search Page
+- [x] Search Page
 - [ ] Intern Page
 
 --- Week 2
