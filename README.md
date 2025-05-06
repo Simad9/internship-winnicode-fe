@@ -16,11 +16,12 @@ Pake extension chrome Mobile Simulator
 
 ### News
 
-- [ ] Homepage
+- [x] Homepage
 - [x] Another News Page
 - [ ] Detail Page
 - [x] Search Page
 - [ ] Intern Page
+- [x] Not Found
 
 --- Week 2
 
