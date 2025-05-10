@@ -18,11 +18,31 @@ Pake extension chrome Mobile Simulator
 
 - [x] Homepage
 - [x] Another News Page
-- [ ] Detail Page
+- [x] Detail Page
 - [x] Search Page
-- [ ] Intern Page
+- [x] Intern Page
 - [x] Not Found
 
 --- Week 2
 
 ### User Public
+
+- [] Dashboard
+- [] Edit Profile
+- [] Like News
+- [] Save News
+
+### User Intern
+- [] Dashboard
+- [] Edit Profile
+- [] Write News
+
+### User Admin
+- [] Dashboard
+- [] Control Account
+- [] Edit Account
+- [] Edit Profile
+- [] Mark User
+- [] Pending News
+- [] Review Page
+- [] Task Page
