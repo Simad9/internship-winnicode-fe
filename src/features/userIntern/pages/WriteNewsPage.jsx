@@ -1,8 +1,16 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
 
 function WriteNewsPage() {
   return (
-    <div>WriteNewsPage</div>
+    <div className='flex flex-col gap-5'>
+      <section className='flex flex-col bg-lm-bg px-[30px] md:px-[40px] lg:px-[60px]'>
+        {/* Navbar */}
+        <Navbar active={"write"} />
+
+
+      </section>
+    </div>
   )
 }
 
