@@ -1,5 +1,8 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import HeadingDua from '../../../components/HeadingDua'
+// import CardPending from '../components/CardPending'
+import CardPendingSecondary from '../components/CardPendingSecondary'
 
 function PendingNewsPage() {
   return (
@@ -9,6 +12,17 @@ function PendingNewsPage() {
         {/* Navbar */}
         <Navbar active={"pending"}></Navbar>
 
+        <div className='flex flex-col w-full gap-3 md:gap-3 '>
+          <div className='flex justify-between items-center mt-2 lg:mt-0'>
+            <HeadingDua label={"Berita Pending"} />
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-2'>
+            <CardPendingSecondary></CardPendingSecondary>
+            <CardPendingSecondary></CardPendingSecondary>
+            <CardPendingSecondary></CardPendingSecondary>
+            <CardPendingSecondary></CardPendingSecondary>
+          </div>
+        </div>
       </section>
     </div >
   )

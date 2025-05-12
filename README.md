@@ -38,11 +38,11 @@ Pake extension chrome Mobile Simulator
 - [x] Write News (tinggal responsive)
 
 ### User Admin
-- [] Dashboard
-- [] Control Account
+- [x] Dashboard
 - [x] Edit Account
 - [x] Edit Profile
+- [x] Pending News
+- [] Control Account
 - [] Mark User
-- [] Pending News
 - [] Review Page
 - [] Task Page
