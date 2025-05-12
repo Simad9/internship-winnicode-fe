@@ -29,19 +29,19 @@ Pake extension chrome Mobile Simulator
 
 - [x] Dashboard
 - [x] Edit Profile
-- [] Like News
-- [] Save News
+- [x] Like News
+- [x] Save News
 
 ### User Intern
 - [x] Dashboard
 - [x] Edit Profile
-- [] Write News
+- [] Write News (tinggal responsive)
 
 ### User Admin
 - [] Dashboard
 - [] Control Account
 - [x] Edit Account
-- [] Edit Profile
+- [x] Edit Profile
 - [] Mark User
 - [] Pending News
 - [] Review Page

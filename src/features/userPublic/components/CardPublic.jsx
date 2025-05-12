@@ -4,8 +4,8 @@ import ButtonSecondary from '../components/ButtonSecondary'
 
 function CardPublic() {
   return (
-    <div className='p-2 bg-lm-primary rounded-md flex flex-col lg:flex-row gap-3'>
-      <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cover Berita" className='w-full lg:w-2/4 h-[170px] md:h-[130px] lg:h-[170px] object-cover rounded-md' />
+    <div className='p-2 bg-lm-primary items-center rounded-md flex flex-col lg:flex-row gap-3'>
+      <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cover Berita" className='w-full lg:w-2/4 h-[170px] md:h-[140px] lg:h-[170px] object-cover rounded-md' />
       <div className='flex flex-col gap-2 justify-center items-center md:items-start w-full'>
         <div className='flex flex-col gap-0.5'>
           <h3 className='font-mw font-normal text-sm text-kategori-accs'>Pendidikan</h3>

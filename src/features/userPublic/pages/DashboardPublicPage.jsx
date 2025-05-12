@@ -16,7 +16,7 @@ function DashboardPublicPage() {
         <Navbar active={"dashboard"}></Navbar>
 
         <div className='flex flex-col md:flex-row w-full gap-3 md:gap-3'>
-          <section className='order-1 md:order-2 flex flex-col w-full md:w-[200px] lg:w-[300px] gap-2'>
+          <section className='order-1 md:order-2 flex flex-col w-full md:w-[300px] lg:w-[400px] gap-2'>
             {/* Penulis */}
             <Public />
 
