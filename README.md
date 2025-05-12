@@ -27,20 +27,20 @@ Pake extension chrome Mobile Simulator
 
 ### User Public
 
-- [] Dashboard
-- [] Edit Profile
+- [x] Dashboard
+- [x] Edit Profile
 - [] Like News
 - [] Save News
 
 ### User Intern
-- [] Dashboard
-- [] Edit Profile
+- [x] Dashboard
+- [x] Edit Profile
 - [] Write News
 
 ### User Admin
 - [] Dashboard
 - [] Control Account
-- [] Edit Account
+- [x] Edit Account
 - [] Edit Profile
 - [] Mark User
 - [] Pending News
