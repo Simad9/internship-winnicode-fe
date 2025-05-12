@@ -10,61 +10,65 @@ function WriteNewsPage() {
         {/* Navbar */}
         <Navbar active={"write"} />
 
-        <div className='flex flex-col md:flex-row w-full gap-2 md:gap-10'>
+        <div className='flex flex-col w-full gap-2 mt-3'>
           <HeadingDua label={"Menulis Berita"}></HeadingDua>
 
           {/* Select Input */}
-          <div class="">
-            <label for="tugas" class="block mb-1 text-sm font-medium text-lm-text font-ws">Tugas yang Dikerjakan</label>
-            <select id="tugas" class="bg-lm-primary border-1 border-abu-text font-mw text-abut-text text-sm rounded-md focus:ring-abu-text focus:border-abu-text w-full p-2.5 ">
-              <option selected>Tugas 1</option>
-              <option value="1">Tugas 2</option>
-              <option value="2">Tugas 3</option>
-              <option value="3">Tugas 4</option>
-            </select>
+          <div className='flex flex-col md:flex-row w-full gap-3'>
+            <div class="w-full">
+              <label for="tugas" class="block mb-1 text-sm font-medium text-lm-text font-ws">Tugas yang Dikerjakan</label>
+              <select id="tugas" class="bg-lm-primary border-1 border-abu-text font-mw text-abut-text text-sm rounded-md focus:ring-abu-text focus:border-abu-text w-full p-2.5 ">
+                <option selected>Tugas 1</option>
+                <option value="1">Tugas 2</option>
+                <option value="2">Tugas 3</option>
+                <option value="3">Tugas 4</option>
+              </select>
+            </div>
+
+            {/* Deadline */}
+            <div className='flex gap-1.5 w-full md:w-8/12'>
+              <div className='w-full' >
+                <label for="deadline" class="block mb-1 text-sm font-medium font-ws text-lm-text">Deadline</label>
+                <h1 className='bg-lm-primary border-1 border-abu-text text-heading-accs text-sm font-mw font-medium rounded-md w-full p-2 text-center'>
+                  Senin, 12/05/2025
+                </h1>
+              </div>
+              <div className='w-full' >
+                <label for="deadline" class="block mb-1 text-sm font-medium font-ws text-lm-text">Saat ini</label>
+                <h1 className='bg-lm-primary border-1 border-abu-text text-lm-text text-sm font-mw font-medium rounded-md w-full p-2 text-center'>
+                  Senin, 05/05/2025
+                </h1>
+              </div>
+            </div>
           </div>
 
-          {/* Deadline */}
-          <div className='flex gap-1.5'>
-            <div className='w-full' >
-              <label for="deadline" class="block mb-1 text-sm font-medium font-ws text-lm-text">Deadline</label>
-              <h1 className='bg-lm-primary border-1 border-abu-text text-heading-accs text-sm font-mw font-medium rounded-md w-full p-2 text-center'>
-                Senin, 12/05/2025
-              </h1>
+          <div className='flex flex-col md:flex-row gap-3'>
+            {/* Upload Cover */}
+            <div className='w-full'>
+              <label for="kategori" class="block mb-1 text-sm font-medium text-lm-text font-ws">Upload Gambar Cover</label>
+              <div class="flex items-center justify-center w-full">
+                <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-30 border-1 border-abu-text rounded-md cursor-pointer bg-lm-primary hover:bg-lm-bg ">
+                  <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg class="w-8 h-8 mb-2 text-abu-text " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                    </svg>
+                    <p class="font-mw text-sm text-abu-text font-semibold">Tekan upload atau tarik dan lepaskan</p>
+                    <p class="font-mw text-xs text-abu-text ">PNG, JPG, atau JPEG (MAX ukuran foto 5MB)</p>
+                  </div>
+                  <input id="dropzone-file" type="file" class="hidden" />
+                </label>
+              </div>
             </div>
-            <div className='w-full' >
-              <label for="deadline" class="block mb-1 text-sm font-medium font-ws text-lm-text">Saat ini</label>
-              <h1 className='bg-lm-primary border-1 border-abu-text text-lm-text text-sm font-mw font-medium rounded-md w-full p-2 text-center'>
-                Senin, 05/05/2025
-              </h1>
+            {/* Image Preview */}
+            <div className='w-full md:w-8/12'>
+              <label for="kategori" class="block mb-1 text-sm font-medium text-lm-text font-ws">Preview Gambar</label>
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Image Preview" className='h-[120px] rounded-md w-full object-cover' />
             </div>
-          </div>
-
-          {/* Upload Cover */}
-          <div>
-            <label for="kategori" class="block mb-1 text-sm font-medium text-lm-text font-ws">Upload Gambar Cover</label>
-            <div class="flex items-center justify-center w-full">
-              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-30 border-1 border-abu-text rounded-md cursor-pointer bg-lm-primary hover:bg-lm-bg ">
-                <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                  <svg class="w-8 h-8 mb-2 text-abu-text " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                  </svg>
-                  <p class="font-mw text-sm text-abu-text font-semibold">Tekan upload atau tarik dan lepaskan</p>
-                  <p class="font-mw text-xs text-abu-text ">PNG, JPG, atau JPEG (MAX ukuran foto 5MB)</p>
-                </div>
-                <input id="dropzone-file" type="file" class="hidden" />
-              </label>
-            </div>
-          </div>
-          {/* Image Preview */}
-          <div>
-            <label for="kategori" class="block mb-1 text-sm font-medium text-lm-text font-ws">Preview Gambar</label>
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Image Preview" className='h-[120px] rounded-md w-full object-cover' />
           </div>
 
           {/* Kategori */}
-          <div className='flex flex-col gap-2'>
-            <div>
+          <div className='flex flex-col md:flex-row gap-3'>
+            <div className='w-full'>
               <label for="kategori" class="block mb-1 text-sm font-medium text-lm-text font-ws">Pilih Kategori</label>
               <select id="kategori" class="bg-lm-primary border-1 border-abu-text font-mw text-abut-text text-sm rounded-md focus:ring-abu-text focus:border-abu-text w-full p-2.5 ">
                 <option selected>Kategori</option>
@@ -73,7 +77,7 @@ function WriteNewsPage() {
                 <option value="3">Eknomi</option>
               </select>
             </div>
-            <div>
+            <div className='w-full md:w-8/12'>
               <label for="req-kategori" class="block mb-1 text-sm font-medium text-lm-text font-ws">Request Kategori</label>
               <input
                 type="text"
@@ -83,6 +87,7 @@ function WriteNewsPage() {
                 placeholder="Tulis untuk Request Kategori" />
             </div>
           </div>
+
 
           {/* Judul */}
           <div>

@@ -35,7 +35,7 @@ Pake extension chrome Mobile Simulator
 ### User Intern
 - [x] Dashboard
 - [x] Edit Profile
-- [] Write News (tinggal responsive)
+- [x] Write News (tinggal responsive)
 
 ### User Admin
 - [] Dashboard
