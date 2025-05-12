@@ -33,7 +33,7 @@ function Penulis() {
           <p>Prodi : Ilmu Komunikasi </p>
           <p>Tanggal Magang : 3 Maret 2025 </p>
         </div>
-        <Button to="/edit-account" label="Edit Akun" />
+        <Button to="/intern/edit-account" label="Edit Akun" />
       </div>
     </section>
   )

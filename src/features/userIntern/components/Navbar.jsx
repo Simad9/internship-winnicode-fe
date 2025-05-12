@@ -12,7 +12,7 @@ function Navbar({ active }) {
 
   return (
     <nav className='flex flex-col gap-2.5 items-center justify-between bg-abu p-2.5 py-2 shadow-lg'>
-      <div className='flex items-s justify-between w-full'>
+      <div className='flex items-center justify-between w-full'>
         {/* LOGO */}
         <img src={Logo} alt="Logo WinniCode" className='w-[152px] md:w-[209px] lg:w-[228px]' />
 
