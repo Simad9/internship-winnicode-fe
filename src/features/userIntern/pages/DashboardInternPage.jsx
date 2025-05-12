@@ -16,7 +16,6 @@ function DashboardInternPage() {
         <Navbar active={"dashboard"} />
 
         <div className='flex flex-col md:flex-row w-full gap-3 md:gap-10'>
-
           <section className='order-1 md:order-2 flex flex-col w-full md:w-[250px] lg:w-[500px] gap-2'>
             {/* Penulis */}
             <Penulis />
