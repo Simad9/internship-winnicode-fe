@@ -42,7 +42,7 @@ Pake extension chrome Mobile Simulator
 - [x] Edit Account
 - [x] Edit Profile
 - [x] Pending News
-- [] Control Account
-- [] Mark User
-- [] Review Page
-- [] Task Page
+- [x] Control Account
+- [x] Mark User
+- [x] Review Page
+- [x] Task Page
