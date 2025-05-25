@@ -123,10 +123,10 @@ function ControlAccountPage() {
                     <td className="px-6 py-2 flex items-center justify-center">
                       <img src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="Photo" className="size-10 rounded-sm" />
                     </td>
-                    <td className="px-4 py-2 text-center">Indra Permana</td>
-                    <td className="px-4 py-2 text-center">Indra123</td>
-                    <td className="px-4 py-2 text-center">Indra123@example.com</td>
-                    <td className="px-4 py-2 text-center">Magang</td>
+                    <td className="px-4 py-2 text-center">User</td>
+                    <td className="px-4 py-2 text-center">User123</td>
+                    <td className="px-4 py-2 text-center">User123@example.com</td>
+                    <td className="px-4 py-2 text-center">User</td>
                     <td>
                       <div className='flex  justify-center items-center gap-2'>
                         <Link to={"#"} className="flex items-center justify-center gap-1">
@@ -140,10 +140,10 @@ function ControlAccountPage() {
                       </div>
                     </td>
                     <td >
-                      <div className='flex  justify-center items-center'>
-                        <Link to={"#"} className="px-5 py-2 bg-dm-primary text-dm-text font-ws font-normal text-[12px] rounded-[6px] text-center">
+                      <div className='flex  justify-center items-center '>
+                        <button disabled className="px-5 py-2 bg-gray-300 text-gray-500 font-ws font-normal text-[12px] rounded-[6px] text-center cursor-not-allowed">
                           Beri Nilai
-                        </Link>
+                        </button>
                       </div>
                     </td>
 

@@ -1,11 +1,16 @@
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './routes/AppRoutes';
+import AxiosInterceptor from "./auth/AxiosInterceptor";
+import { AuthProvider } from "./auth/AuthProvider"
 
-const App = () => { 
+const App = () => {
   return (
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <AxiosInterceptor />
+        <AppRoutes />
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 

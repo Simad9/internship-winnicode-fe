@@ -12,14 +12,14 @@ import EditAccountPage from '../features/userAdmin/pages/EditAccountPage';
 const AdminRoutes = () => (
   <Routes>
     <Route path="" element={<DashboardAdminPage />} />
-    <Route path="pending-news" element={<PendingNewsPage />} />
-    <Route path="review-news/:id_news" element={<ReviewPage />} />
-    <Route path="control-account" element={<ControlAccountPage />} />
-    <Route path="mark-intern/:id_user" element={<MarkUserPage />} />
-    <Route path="task" element={<TaskPage />} />
-    <Route path="edit-user/:id_user" element={<EditUserPage />} />
-    <Route path="edit-account" element={<EditAccountPage />} />
-  </Routes>
+    < Route path="pending-news" element={< PendingNewsPage />} />
+    < Route path="review-news/:id_news" element={< ReviewPage />} />
+    < Route path="control-account" element={< ControlAccountPage />} />
+    < Route path="mark-intern/:id_user" element={< MarkUserPage />} />
+    < Route path="task" element={< TaskPage />} />
+    < Route path="edit-user/:id_user" element={< EditUserPage />} />
+    < Route path="edit-account" element={< EditAccountPage />} />
+  </Routes >
 );
 
 export default AdminRoutes;
