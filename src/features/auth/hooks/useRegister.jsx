@@ -1,35 +1,19 @@
-import { useState } from 'react';
-import { login } from '../api/authApi';
+import { useState } from "react";
+import { register } from "../api/authApi";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 
-export const useLogin = () => {
-  const [loading, setLoading] = useState(false);
+export const useRegister = () => {
+  const [isLoading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async (data) => {
-    if (data.username === '' || data.password === '') {
-      toast.error('Username dan Password tidak boleh kosong', {
-        style: {
-          fontSize: '0.8rem',
-        },
-        autoClose: 1500,
-        closeOnClick: true,
-        pauseOnHover: false,
-      });
-      return;
-    }
-
+  const handleRegister = async (data) => {
     try {
       setLoading(true);
-      const response = await login(data);  // Panggil API login
-      // simpan data
-      console.log(response);  // Simpan data login
-      localStorage.setItem('access_token', response.accessToken);  // Simpan token akses
 
-      // Login berhasil
+      const response = await register(data);
       if (response) {
-        toast.success('Login berhasil! Menuju halaman dashboard.', {
+        toast.success('Registrasi berhasil! Menuju halaman login.', {
           style: {
             fontSize: '0.8rem',
           },
@@ -39,9 +23,10 @@ export const useLogin = () => {
         });
 
         setTimeout(() => {
-          navigate('/news');
+          navigate('/login'); // Redirect ke halaman login setelah berhasil register
         }, 1500);
       }
+
     } catch (error) {
       if (error.response) {
         // Server mengirim response error (misal 400)
@@ -58,7 +43,7 @@ export const useLogin = () => {
   };
 
   return {
-    login: handleLogin,
-    loading,
+    register: handleRegister,
+    isLoading,
   };
 };

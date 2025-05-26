@@ -1,11 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
-function Button({ to, label }) {
+function Button({ label, onClick, isLoading }) {
   return (
-    <Link to={to} className='py-2 px-5 bg-dm-primary text-dm-text font-ws font-normal md:font-medium text-sm md:text-base rounded-[10px] text-center'>
+    <button
+      className={`py-2 px-5 ${isLoading ? 'bg-gray-400' : 'bg-dm-primary cursor-pointer'} text-dm-text font-ws font-normal md:font-medium text-sm md:text-base rounded-[10px] text-center`}
+      type='submit'
+      onClick={onClick}
+      disabled={isLoading}
+    >
       {label}
-    </Link>
+    </button>
   )
 }
 
