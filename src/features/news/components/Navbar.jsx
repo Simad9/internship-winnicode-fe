@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Logo from '../../../assets/icons/icon-logo.svg';
 import IconBurger from '../../../assets/icons/navbar/icon-burgerMenu.svg';
 import iconDarkMode from '../../../assets/icons/navbar/icon-darkMode.svg';
 import iconSearch from '../../../assets/icons/navbar/icon-search.svg';
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({}) {
   const [click, setClick] = useState(false);
   const handleClick = () => {
     setClick(!click)

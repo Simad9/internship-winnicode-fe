@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use } from 'react'
 import Footer from '../../news/components/Footer'
 import Navbar from '../../news/components/Navbar'
 import { Link } from 'react-router-dom'
@@ -10,7 +10,15 @@ import fotoProfile from '../../../assets/img/profile.jpg'
 import HeadingDua from '../components/HeadingDua'
 import CardNewsLike from '../components/CardNewsLike'
 
+// Services
+import { useEffect } from 'react'
+
 function newsDetailPage() {
+  useEffect(() => {
+    // Simulate fetching data or any other side effects
+    console.log('NewsDetailPage mounted');
+  }, []);
+
   return (
     <>
       <div className='flex flex-col px-8 bg-lm-bg'>

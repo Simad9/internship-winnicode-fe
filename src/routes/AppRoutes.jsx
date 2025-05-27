@@ -4,14 +4,14 @@ import NewsRoutes from './NewsRoute';
 import PublicRoutes from './PublicRoute';
 import InternRoutes from './InternRoute';
 import AdminRoutes from './AdminRoute';
-import Homepage from '../features/news/pages/HomePage';
+import HomePage from '../features/news/pages/HomePage';
 import ProtectedRoute from './ProtectedRoute';
 
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* First Routes */}
-      <Route path="/" element={<Homepage />} />
+      {/* First Routes */}      
+      <Route path="/" element={<HomePage />} />
       {/* Auth Routes */}
       <Route path="/*" element={<AuthRoutes />} />
       {/* News Routes */}

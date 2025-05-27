@@ -23,9 +23,10 @@ export const useLogin = () => {
     try {
       setLoading(true);
       const response = await login(data);  // Panggil API login
-      // simpan data
-      console.log(response);  // Simpan data login
-      localStorage.setItem('access_token', response.accessToken);  // Simpan token akses
+
+      // Simpan data
+      localStorage.setItem('userName', response.data.name);  
+      localStorage.setItem('userPhoto', response.data.photo);
 
       // Login berhasil
       if (response) {

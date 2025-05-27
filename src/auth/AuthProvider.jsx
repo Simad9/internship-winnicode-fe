@@ -2,9 +2,8 @@
 import { createContext, useContext, useState } from "react";
 import Cookies from "js-cookie";
 import axios from "./axiosInstance";
-import PropTypes from 'prop-types';
 
-const BASE_URL = import.meta.env.BE_BASE_URL || "http://localhost:5000/api";
+const BASE_URL = import.meta.env.VITE_BE_BASE_URL;
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -19,7 +18,7 @@ export const AuthProvider = ({ children }) => {
       Cookies.set("refreshToken", res.data.refreshToken, {
         secure: true,
         sameSite: "Strict",
-        expires: 1,
+        expires: "1h",
       });
 
       return true;

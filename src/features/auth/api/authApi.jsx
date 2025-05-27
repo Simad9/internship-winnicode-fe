@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../../../auth/AxiosInstance';
 const API_URL = import.meta.env.VITE_BE_BASE_URL;
 
 export const login = async (data) => {

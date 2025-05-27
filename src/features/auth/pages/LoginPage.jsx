@@ -33,7 +33,7 @@ function LoginPage() {
         {/* HEADING */}
         <div className='text-center text-lm-text flex flex-col items-center justify-center'>
           <h1 className='text-bold font-base font-ws font-medium text-2xl md:text-4xl '>Selamat Datang</h1>
-          <p className='font-mw  text-sm w-3/4 md:w-7/12 lg:w-5/12 md:text-base'>Untuk mendapatkan fitur lain anda harus login terlebih dahulu</p>
+          <p className='font-mw  text-sm w-3/4 md:w-7/12 lg:w-9/12 md:text-base'>Untuk mendapatkan fitur lain anda harus login terlebih dahulu</p>
         </div>
         {/* FORM */}
         <form action="">
