@@ -178,7 +178,7 @@ function HomePage() {
 
           {/* Button Selengkapnya */}
           <div className='flex flex-row items-center justify-center w-full mt-7'>
-            <Link to={"/news/page"} className='py-1 lg:py-1.5 w-8/12 md:w-4/12  bg-dm-primary text-dm-text font-ws font-normal md:font-medium text-sm lg:text-base rounded-lg text-center'>
+            <Link to={"/news/page?page=1"} className='py-1 lg:py-1.5 w-8/12 md:w-4/12  bg-dm-primary text-dm-text font-ws font-normal md:font-medium text-sm lg:text-base rounded-lg text-center'>
               Selengkapnya
             </Link>
           </div>

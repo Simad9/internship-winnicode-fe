@@ -5,7 +5,7 @@ import iconDarkMode from '../../../assets/icons/navbar/icon-darkMode.svg';
 import iconSearch from '../../../assets/icons/navbar/icon-search.svg';
 import { Link } from 'react-router-dom';
 
-function Navbar({}) {
+function Navbar({ }) {
   const [click, setClick] = useState(false);
   const handleClick = () => {
     setClick(!click)
@@ -15,7 +15,9 @@ function Navbar({}) {
     <nav className='flex flex-col gap-2.5 items-center justify-between bg-abu p-2.5 py-2 shadow-lg'>
       <div className='flex items-center justify-between w-full'>
         {/* LOGO */}
-        <img src={Logo} alt="Logo WinniCode" className='w-[152px] md:w-[209px] lg:w-[228px]' />
+        <Link to={'/'} className='flex items-center justify-center'>
+          <img src={Logo} alt="Logo WinniCode" className='w-[152px] md:w-[209px] lg:w-[228px]' />
+        </Link>
 
         {/* KETIKA DESKTOP */}
         <div className='hidden md:flex items-center py-2 gap-2'>
