@@ -13,9 +13,6 @@ function Pagination({ page, totalPages }) {
     }
   }
 
-  console.log(handlePageChange(page));
-
-
   return (
     <div className='flex flex-row items-center justify-center gap-2.5 w-full mt-7'>
       <Link to={handlePageChange(page - 1)} className={`cursor-pointer bg-dm-bg rounded-lg p-2 size-8 md:size-9 lg:size-10 ${page <= 1 ? 'pointer-events-none opacity-50' : ''}`}>

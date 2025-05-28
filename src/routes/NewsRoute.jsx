@@ -9,10 +9,10 @@ import InternNewsPage from '../features/news/pages/InternNewsPage';
 const NewsRoutes = () => (
   <Routes>
     <Route path="" element={<HomePage />} />
-    <Route path=":id_news" element={<NewsDetailPage />} />
+    <Route path=":newsId" element={<NewsDetailPage />} />
     <Route path="page" element={<AnotherNewsPage />} />
     <Route path="search" element={<SearchNewsPage />} />
-    <Route path="magang/:id_user" element={<InternNewsPage />} />
+    <Route path="magang/:userId" element={<InternNewsPage />} />
   </Routes>
 );
 

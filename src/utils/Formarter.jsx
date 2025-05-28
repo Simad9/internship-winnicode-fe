@@ -31,6 +31,24 @@ export const formatDate = (dateString) => {
   return `${day}/${month}/${year}`;
 }
 
+export const interntMonth = (dateStrng) => {
+  const date = new Date(dateStrng);
+  const now = new Date();
+  const diffTime = Math.abs(now - date);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const diffMonths = Math.ceil(diffDays / 30);
+  return `${diffMonths} bulan`;
+}
+
+export const formatDayDateTime = (dateString) => {
+  const date = new Date(dateString);
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = new Intl.DateTimeFormat('id-ID', options).format(date);
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${formattedDate} - ${hours}:${minutes}`;
+}
+
 export const imageMissing = (image) => {
   if (image === "cover.jpg" || image === null || image === undefined || image === "") {
     return 'https://placehold.co/600x400';

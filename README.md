@@ -1,53 +1,54 @@
-# Projek FE
+# Projek Magang Front-End
 
-## To Do List : Slicing [Web, Tablet, Mobile] Mode
-
-Requirement :
-Pake extension chrome Mobile Simulator
-
-- Mobile pake Xiaomi 12
-- Tablet pake iPad Mini
-- Web pake biasa
+## To Do List : Gabungin dengan BE
 
 ### Auth
 
 - [x] Login
 - [x] Register
 
+#### Tambahan
+
+- Kalo ke dashboard masih belum nyatu
+
 ### News
 
 - [x] Homepage
 - [x] Another News Page
-- [x] Detail Page
+- [ ] Detail Page
 - [x] Search Page
-- [x] Intern Page
-- [x] Not Found
+- [ ] Intern Page
+- [ ] Not Found
+
+#### Tambahan
+
+- Buat kalo udah masuk, kasih gambar dan nama. Terus buat logo logoutnya (Navbar update)
 
 --- Week 2
 
 ### User Public
 
-- [x] Dashboard
-- [x] Edit Profile
-- [x] Like News
-- [x] Save News
+- [ ] Dashboard
+- [ ] Edit Profile
+- [ ] Like News
+- [ ] Save News
 
 ### User Intern
 
-- [x] Dashboard
-- [x] Edit Profile
-- [x] Write News (tinggal responsive)
+- [ ] Dashboard
+- [ ] Edit Profile
+- [ ] Write News (tinggal responsive)
 
 ### User Admin
 
-- [x] Dashboard
-- [x] Edit Account
-- [x] Edit Profile
-- [x] Pending News
-- [x] Control Account
-- [x] Mark User
-- [x] Review Page
-- [x] Task Page
+- [ ] Dashboard
+- [ ] Edit Account
+- [ ] Edit Profile
+- [ ] Pending News
+- [ ] Control Account
+- [ ] Mark User
+- [ ] Review Page
+- [ ] Task Page
 
 ---
 

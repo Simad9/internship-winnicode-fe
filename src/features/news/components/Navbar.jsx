@@ -3,12 +3,19 @@ import Logo from '../../../assets/icons/icon-logo.svg';
 import IconBurger from '../../../assets/icons/navbar/icon-burgerMenu.svg';
 import iconDarkMode from '../../../assets/icons/navbar/icon-darkMode.svg';
 import iconSearch from '../../../assets/icons/navbar/icon-search.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Navbar({ }) {
+function Navbar() {
   const [click, setClick] = useState(false);
+  const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+
   const handleClick = () => {
     setClick(!click)
+  }
+
+  const handleSearch = () => {
+    navigate(`/news/search?q=${search}`);
   }
 
   return (
@@ -22,8 +29,8 @@ function Navbar({ }) {
         {/* KETIKA DESKTOP */}
         <div className='hidden md:flex items-center py-2 gap-2'>
           <div className='relative w-[180px]'>
-            <input type="text" placeholder='Cari Berita...' className='w-full py-2 pl-2 pr-10 bg-lm-primary text-lm-text font-ws font-medium  text-sm rounded-sm' />
-            <button className='absolute inset-y-0 end-0 flex items-center pe-2 cursor-pointer'>
+            <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Cari Berita...' className='w-full py-2 pl-2 pr-10 bg-lm-primary text-lm-text font-ws font-medium  text-sm rounded-sm' />
+            <button onClick={handleSearch} className='absolute inset-y-0 end-0 flex items-center pe-2 cursor-pointer'>
               <img src={iconSearch} alt="iconSearch" />
             </button>
           </div>

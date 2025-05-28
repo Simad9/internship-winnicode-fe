@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 function CardNewsLike({ image, title, author, date, id }) {
+  
   return (
     <div className='flex flex-row gap-2.5 md:gap-2 items-center justify-center bg-lm-primary w-full rounded-md p-1 mb-1'>
       <img src={image} alt="Gambar" className='rounded-md w-[110px] md:w-[90px] lg:w-[120px] h-full object-fill' />
