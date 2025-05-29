@@ -15,14 +15,15 @@
 
 - [x] Homepage
 - [x] Another News Page
-- [ ] Detail Page
+- [x] Detail Page
 - [x] Search Page
-- [ ] Intern Page
-- [ ] Not Found
+- [x] Intern Page
+- [x] Not Found
 
 #### Tambahan
 
 - Buat kalo udah masuk, kasih gambar dan nama. Terus buat logo logoutnya (Navbar update)
+- Detail Page (Harus login dulu)
 
 --- Week 2
 

@@ -7,10 +7,12 @@ import AdminRoutes from './AdminRoute';
 import HomePage from '../features/news/pages/HomePage';
 import ProtectedRoute from './ProtectedRoute';
 
+// Not Found Page
+import NotFoundPage from '../features/notFound/pages/NotFoundPage';
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* First Routes */}      
+      {/* First Routes */}
       <Route path="/" element={<HomePage />} />
       {/* Auth Routes */}
       <Route path="/*" element={<AuthRoutes />} />
@@ -34,6 +36,7 @@ const AppRoutes = () => {
           <AdminRoutes />
         </ProtectedRoute>
       } />
+      <Route path='/404' element={<NotFoundPage />} />
     </Routes>
   );
 };

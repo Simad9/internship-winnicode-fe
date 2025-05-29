@@ -6,6 +6,9 @@ import AnotherNewsPage from '../features/news/pages/AnotherNewsPage';
 import SearchNewsPage from '../features/news/pages/SearchNewsPage';
 import InternNewsPage from '../features/news/pages/InternNewsPage';
 
+// Not Found Page
+import NotFoundPage from '../features/notFound/pages/NotFoundPage';
+
 const NewsRoutes = () => (
   <Routes>
     <Route path="" element={<HomePage />} />
@@ -13,6 +16,9 @@ const NewsRoutes = () => (
     <Route path="page" element={<AnotherNewsPage />} />
     <Route path="search" element={<SearchNewsPage />} />
     <Route path="magang/:userId" element={<InternNewsPage />} />
+
+     {/* Not Found Page */}
+    <Route path="*" element={<NotFoundPage />} />
   </Routes>
 );
 

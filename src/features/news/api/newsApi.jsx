@@ -22,6 +22,6 @@ export const searchNews = async (query) => {
 }
 
 export const internPageNews = async (internId) => {
-  const response = await axios.get(`${API_URL}/news/intern/${internId}`);
+  const response = await axios.get(`${API_URL}/news/magang/${internId}`);
   return response.data;
 }

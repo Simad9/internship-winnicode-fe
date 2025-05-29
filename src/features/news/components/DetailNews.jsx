@@ -11,7 +11,7 @@ function DetailNews({ news }) {
       <div className='w-full mt-3'>
         <img src={imageMissing(news.image)} alt="Cover Berita" className='w-full object-cover rounded-md h-[200px]' />
       </div>
-      <div className='font-mw text-base font-normal' dangerouslySetInnerHTML={{ __html: news.content }} />
+      <div className='font-mw text-base font-normal' dangerouslySetInnerHTML={{ __html: news.content.replace(/\n/g, "<br />")  }} />
     </div>
   )
 }
