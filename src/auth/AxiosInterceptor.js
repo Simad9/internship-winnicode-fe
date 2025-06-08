@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import axios from "./axiosInstance";
-import useAuth from "./useAuth";
+import axios from "./AxiosInstance";
+import useAuth from "../features/auth/api/useAuth";
 
 const AxiosInterceptor = () => {
   const { accessToken, refreshAccessToken, logout } = useAuth();
@@ -30,6 +30,11 @@ const AxiosInterceptor = () => {
           } else {
             logout();
           }
+        }
+
+        // Handle unauthorized
+        if (error.response?.status === 401) {
+          logout();
         }
 
         return Promise.reject(error);

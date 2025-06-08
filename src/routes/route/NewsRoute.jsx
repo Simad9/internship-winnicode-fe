@@ -1,13 +1,13 @@
 // src/routes/NewsRoutes.jsx
 import { Routes, Route } from 'react-router-dom';
-import HomePage from '../features/news/pages/HomePage';
-import NewsDetailPage from '../features/news/pages/NewsDetailPage';
-import AnotherNewsPage from '../features/news/pages/AnotherNewsPage';
-import SearchNewsPage from '../features/news/pages/SearchNewsPage';
-import InternNewsPage from '../features/news/pages/InternNewsPage';
+import HomePage from '../../features/news/pages/HomePage';
+import NewsDetailPage from '../../features/news/pages/NewsDetailPage';
+import AnotherNewsPage from '../../features/news/pages/AnotherNewsPage';
+import SearchNewsPage from '../../features/news/pages/SearchNewsPage';
+import InternNewsPage from '../../features/news/pages/InternNewsPage';
 
 // Not Found Page
-import NotFoundPage from '../features/notFound/pages/NotFoundPage';
+import NotFoundPage from '../../features/notFound/pages/NotFoundPage';
 
 const NewsRoutes = () => (
   <Routes>
@@ -17,7 +17,7 @@ const NewsRoutes = () => (
     <Route path="search" element={<SearchNewsPage />} />
     <Route path="magang/:userId" element={<InternNewsPage />} />
 
-     {/* Not Found Page */}
+    {/* Not Found Page */}
     <Route path="*" element={<NotFoundPage />} />
   </Routes>
 );

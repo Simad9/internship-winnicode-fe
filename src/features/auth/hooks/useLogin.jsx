@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { login } from '../api/authApi';
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
+import { useAuthContext } from '../api/AuthProvider';
 
 export const useLogin = () => {
+  const { login } = useAuthContext();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -23,10 +24,6 @@ export const useLogin = () => {
     try {
       setLoading(true);
       const response = await login(data);  // Panggil API login
-
-      // Simpan data
-      localStorage.setItem('userName', response.data.name);  
-      localStorage.setItem('userPhoto', response.data.photo);
 
       // Login berhasil
       if (response) {

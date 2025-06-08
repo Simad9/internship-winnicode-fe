@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import AuthRoutes from './AuthRoute';
-import NewsRoutes from './NewsRoute';
-import PublicRoutes from './PublicRoute';
-import InternRoutes from './InternRoute';
-import AdminRoutes from './AdminRoute';
+import AuthRoutes from './route/AuthRoute';
+import NewsRoutes from './route/NewsRoute';
+import PublicRoutes from './route/PublicRoute';
+import InternRoutes from './route/InternRoute';
+import AdminRoutes from './route/AdminRoute';
 import HomePage from '../features/news/pages/HomePage';
 import ProtectedRoute from './ProtectedRoute';
 

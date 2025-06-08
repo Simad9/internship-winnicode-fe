@@ -2,9 +2,18 @@ import React from 'react'
 import { useState } from 'react';
 import Logo from '../../../assets/icons/icon-logo.svg';
 import IconBurger from '../../../assets/icons/navbar/icon-burgerMenu.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuthContext } from '../../auth/api/AuthProvider';
 
 function Navbar({ active }) {
+  const navigate = useNavigate();
+  const { logout } = useAuthContext();
+
+  const handleLogout = async () => {
+    await logout();
+    navigate('/login', { replace: true });
+  };
+
   const [click, setClick] = useState(false);
   const handleClick = () => {
     setClick(!click)
@@ -34,7 +43,7 @@ function Navbar({ active }) {
             </div>
           </div>
 
-          <Link to={'/login'} className='py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] cursor-pointer'>Logout</Link>
+          <button to={'/login'} onClick={handleLogout} className='py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] cursor-pointer'>Logout</button>
         </div>
 
         {/* BUGER MENU */}
@@ -59,7 +68,7 @@ function Navbar({ active }) {
             <Link to={'/admin/task'} className={`text-lm-text font-ws text-sm lg:text-[16px] ${active == "task" ? 'font-semibold' : 'font-normal'}`}>Tugas</Link>
           </div>
         </div>
-        <Link to={'/login'} className='w-full py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] text-center cursor-pointer'>Logout</Link>
+        <button to={'/login'} onClick={handleLogout} className='w-full py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] text-center cursor-pointer'>Logout</button>
       </div>
 
     </nav>
