@@ -1,8 +1,7 @@
-import create from 'zustand';
+// store/authStore.js
+import { create } from 'zustand';
 
-const useAuthStore = create((set) => ({
-  user: null,
-  setUser: (user) => set({ user }),
+export const useRoleState = create((set) => ({
+  role: '', // default state untuk role
+  setRole: (newRole) => set({ role: newRole }), // fungsi untuk mengubah role
 }));
-
-export default useAuthStore;

@@ -20,19 +20,19 @@ const AppRoutes = () => {
       <Route path="/news/*" element={<NewsRoutes />} />
       {/* Public Routes - Protected */}
       <Route path="/public/*" element={
-        <ProtectedRoute>
+        <ProtectedRoute requiredRole="public">
           <PublicRoutes />
         </ProtectedRoute>
       } />
       {/* Intern Routes - Protected */}
       <Route path="/intern/*" element={
-        <ProtectedRoute>
+        <ProtectedRoute requiredRole="intern">
           <InternRoutes />
         </ProtectedRoute>
       } />
       {/* Admin Routes - Protected */}
       <Route path="/admin/*" element={
-        <ProtectedRoute>
+        <ProtectedRoute requiredRole="admin">
           <AdminRoutes />
         </ProtectedRoute>
       } />

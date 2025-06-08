@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import Cookies from "js-cookie";
 import axios from "../../../auth/AxiosInstance";
+import { enkripsiData } from "../../../utils/Crypto";
 
 const BASE_URL = import.meta.env.VITE_BE_BASE_URL;
 const AuthContext = createContext();
@@ -16,10 +17,10 @@ export const AuthProvider = ({ children }) => {
     return saveUserPhoto || null
   });
 
+
   const login = async (data) => {
     try {
       const res = await axios.post(`${BASE_URL}/login`, data);
-      console.log(res);
 
       // Simpan Statee
       setAccessToken(res.data.accessToken);
@@ -29,13 +30,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('accessToken', res.data.accessToken);
       localStorage.setItem('userName', res.data.data.name);
       localStorage.setItem('userPhoto', res.data.data.photo);
-
-      // Save refresh token in cookie (default 1 day) -- sudah disetting di BE
-      // Cookies.set("refreshToken", res.data.refreshToken, {
-      //   secure: true,
-      //   sameSite: "Strict",
-      //   expires: "1h",
-      // });
+      localStorage.setItem('userRole', enkripsiData(res.data.data.role));
 
       return true;
     } catch (err) {

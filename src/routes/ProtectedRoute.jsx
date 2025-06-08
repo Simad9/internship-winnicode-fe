@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import useAuth from "../features/auth/api/useAuth";
 import LoadingFetch from "../components/LoadingFetch";
+import { dekripsiData } from "../utils/Crypto";
 
-const ProtectedRoute = ({ children }) => {
-  const { accessToken, refreshAccessToken, logout } = useAuth();
+const ProtectedRoute = ({ children, requiredRole }) => {
+  const { accessToken, role, refreshAccessToken, logout } = useAuth();
   const [isLoading, setIsLoading] = useState(true); // Menunggu pengecekan
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [redirectPath, setRedirectPath] = useState(null);
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -17,7 +19,24 @@ const ProtectedRoute = ({ children }) => {
           // Jika refresh gagal, logout dan arahkan ke login
           logout();
           setIsAuthenticated(false);
+          setRedirectPath("/login");
         } else {
+          // Mengecek role setelah refresh token berhasil
+          switch (dekripsiData(role)) {
+            case "admin":
+              setRedirectPath("/admin");
+              break;
+            case "public":
+              setRedirectPath("/public");
+              break;
+            case "intern":
+              setRedirectPath("/intern");
+              break;
+            default:
+              // Jika role tidak valid, arahkan ke halaman unauthorized
+              setRedirectPath("/unauthorized");
+              break;
+          }
           setIsAuthenticated(true);
         }
       } else {
@@ -27,18 +46,24 @@ const ProtectedRoute = ({ children }) => {
     };
 
     checkAuth();
-  }, [accessToken, refreshAccessToken, logout]);
+  }, [accessToken, refreshAccessToken, logout, role]);
 
   // Jika sedang memuat pengecekan
   if (isLoading) {
-    return <LoadingFetch></LoadingFetch>; // Anda bisa menambahkan loading spinner jika perlu
+    return <LoadingFetch />; // Menunggu pengecekan selesai
   }
 
-  // Jika tidak terautentikasi, arahkan ke halaman login
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+  // Jika role tidak sesuai dengan yang dibutuhkan, arahkan ke halaman unauthorized
+  if (isAuthenticated && dekripsiData(role) !== requiredRole) {
+    return <Navigate to="/unauthorized" replace />;
   }
 
+  // Jika perlu mengarahkan pengguna ke halaman lain
+  if (redirectPath) {
+    return <Navigate to={redirectPath} replace />;
+  }
+
+  // Jika sudah terautentikasi, tampilkan children
   return children;
 };
 
