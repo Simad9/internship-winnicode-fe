@@ -1,14 +1,25 @@
-import React from 'react'
 import { useState } from 'react';
 import Logo from '../../../assets/icons/icon-logo.svg';
 import IconBurger from '../../../assets/icons/navbar/icon-burgerMenu.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuth from '../../auth/api/useAuth';
 
 function Navbar({ active }) {
+  const { logout } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
   const [click, setClick] = useState(false);
   const handleClick = () => {
-    setClick(!click)
-  }
+    setClick(!click);
+  };
+
+  const handleLogout = async () => {
+    setLoading(true);
+    await logout();
+    navigate('/login', { replace: true });
+    setLoading(false);
+  };
 
   return (
     <nav className='flex flex-col gap-2.5 items-center justify-between bg-abu p-2.5 py-2 shadow-lg'>
@@ -30,8 +41,7 @@ function Navbar({ active }) {
               <Link to={'/public/save'} className={`text-lm-text font-ws text-sm lg:text-[16px] ${active == "save" ? 'font-semibold' : 'font-normal'}`}>Disimpan</Link>
             </div>
           </div>
-
-          <Link to={'/login'} className='py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] cursor-pointer'>Logout</Link>
+          <Link onClick={handleLogout} className='py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] cursor-pointer'>{loading ? 'Loading...' : 'Logout'}</Link>
         </div>
 
         {/* BUGER MENU */}

@@ -1,22 +1,52 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Logo from '../../../assets/icons/icon-logo.svg';
 import IconBurger from '../../../assets/icons/navbar/icon-burgerMenu.svg';
 import iconDarkMode from '../../../assets/icons/navbar/icon-darkMode.svg';
 import iconSearch from '../../../assets/icons/navbar/icon-search.svg';
 import { Link, useNavigate } from 'react-router-dom';
+import { dekripsiData } from "../../../utils/Crypto";
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [search, setSearch] = useState('');
+  const [username, setUsername] = useState('');
+  const [photo, setPhoto] = useState('');
+  const [role, setRole] = useState('');
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    setClick(!click)
-  }
+  useEffect(() => {
+    const storedUsername = localStorage.getItem('userName');
+    const storedPhoto = localStorage.getItem('userPhoto');
+    const storedRole = localStorage.getItem('userRole');
 
-  const handleSearch = () => {
-    navigate(`/news/search?q=${search}`);
-  }
+    if (storedUsername && storedPhoto && storedRole) {
+      setUsername(storedUsername);
+      setPhoto(storedPhoto);
+      setRole(storedRole);
+      pathRole();
+    }
+  }, []);
+
+  const handleClick = () => setClick(!click);
+
+  const handleSearch = () => navigate(`/news/search?q=${search}`);
+
+  const pathRole = () => {
+    switch (dekripsiData(role)) {
+      case 'admin':
+        return '/admin';
+      case 'public':
+        return '/public';
+      case 'intern':
+        return '/intern';
+      default:
+        return '';
+    }
+  };
+
+  const path = pathRole();
+
+
 
   return (
     <nav className='flex flex-col gap-2.5 items-center justify-between bg-abu p-2.5 py-2 shadow-lg'>
@@ -37,7 +67,14 @@ function Navbar() {
           <div className='p-2 bg-lm-primary rounded-sm cursor-pointer'>
             <img src={iconDarkMode} alt="iconDarkMode" />
           </div>
-          <Link to={'/login'} className='py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] cursor-pointer'>Login</Link>
+          {username ? (
+            <Link to={path} className=' flex justify-center items-center gap-3'>
+              <img src={photo} alt="Profile" className='size-8 rounded-full object-cover' />
+              <p className='text-dm-primary font-ws font-semibold text-sm'>{username}</p>
+            </Link>
+          ) : (
+            <Link to={'/login'} className='py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold text-sm rounded-[10px] cursor-pointer'>Login</Link>
+          )}
         </div>
 
         {/* BUGER MENU */}
@@ -59,7 +96,15 @@ function Navbar() {
             <img src={iconDarkMode} alt="iconDarkMode" />
           </div>
         </div>
-        <Link to={'/login'} className='w-full py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] text-center cursor-pointer'>Login</Link>
+        {username ? (
+          <Link to={path} className='flex justify-center items-center gap-3 bg-lm-primary py-2 rounded-lg'>
+            <img src={photo} alt="Profile" className='size-8 rounded-full object-cover' />
+            <p className='text-dm-primary font-ws font-semibold text-sm'>{username}</p>
+          </Link>
+        ) : (
+          <Link to={'/login'} className='py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold text-sm rounded-[10px] cursor-pointer'>Login</Link>
+        )}
+        {/* <Link to={'/login'} className='w-full py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] text-center cursor-pointer'>Login</Link> */}
       </div>
 
     </nav>

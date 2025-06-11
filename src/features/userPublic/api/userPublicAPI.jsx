@@ -25,4 +25,13 @@ export const disimpan = async () => {
 
 // Edit Akun
 
+// Logout
+export const logout = async () => {
+  const response = await axios.delete(`${API_URL}/logout`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    }
+  });
+  return response.data;
+}
 

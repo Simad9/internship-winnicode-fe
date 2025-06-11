@@ -46,9 +46,7 @@ export const AuthProvider = ({ children }) => {
       console.error(error);
     }
     // Pembersihan data
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("userName");
-    localStorage.removeItem("userPhoto");
+    localStorage.clear();
     setAccessToken(null);
     setUsername(null);
     setUserPhoto(null);
