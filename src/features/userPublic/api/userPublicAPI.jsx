@@ -3,11 +3,7 @@ const API_URL = import.meta.env.VITE_BE_BASE_URL;
 
 // Dashboard
 export const dashboard = async () => {
-  const response = await axios.get(`${API_URL}/public/dashboard`, {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    }
-  });
+  const response = await axios.get(`${API_URL}/public/dashboard`);
   return response.data;
 }
 
@@ -24,14 +20,15 @@ export const disimpan = async () => {
 }
 
 // Edit Akun
+// -- Ambil Akun
+export const getUserByUsername = async (username) => {
+  const response = await axios.get(`${API_URL}/getUsername/${username}`);
+  return response.data;
+}
 
-// Logout
-export const logout = async () => {
-  const response = await axios.delete(`${API_URL}/logout`, {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    }
-  });
+// -- edit akun
+export const editAkun = async (data) => {
+  const response = await axios.put(`${API_URL}/public/edit-account`, data);
   return response.data;
 }
 

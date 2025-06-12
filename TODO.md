@@ -7,7 +7,7 @@
 
 ### User Public
 
-- [ ] Dashboard
+- [] Dashboard
 - [ ] Edit Profile
 - [ ] Like News
 - [ ] Save News

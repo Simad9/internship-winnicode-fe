@@ -62,6 +62,13 @@ export const formatDayDateTime = (dateString) => {
   return `${formattedDate} - ${hours}:${minutes} WIB`;
 }
 
+export const taskDate = (dateString) => {
+  const date = new Date(dateString);
+  const options = { day: 'numeric', month: 'long' };
+  const formattedDate = new Intl.DateTimeFormat('id-ID', options).format(date);
+  return formattedDate;
+}
+
 export const imageMissing = (image) => {
   if (image === "cover.jpg" || image === null || image === undefined || image === "") {
     return 'https://placehold.co/600x400?text=Image+Not+Found';

@@ -15,6 +15,11 @@ import { dashboard } from '../api/userPublicAPI'
 
 function DashboardPublicPage() {
   const [loading, setLoading] = useState(false);
+  const [disukai, setDisukai] = useState([]);
+  const [disimpan, setDisimpan] = useState([]);
+  const [countLike, setCountLike] = useState(0);
+  const [countSave, setCountSave] = useState(0);
+  const [profile, setProfile] = useState({});
 
   useEffect(() => {
     fetchData();
@@ -26,10 +31,12 @@ function DashboardPublicPage() {
       setLoading(true);
       const response = await dashboard();
       console.log('Response dari API:', response);
-
-      return;
       if (response) {
-
+        setCountLike(response.countLike);
+        setCountSave(response.countSave);
+        setDisukai(response.saveNews);
+        setDisimpan(response.saveNews);
+        setProfile(response.userData);
       } else {
         toast.error('Gagal memuat data berita. Silakan coba lagi.');
       }
@@ -40,7 +47,7 @@ function DashboardPublicPage() {
     }
   };
 
-  if (loading) {
+  if (loading || !profile || !disukai || !disimpan) {
     return (
       <div className='flex flex-col bg-lm-bg px-[30px] md:px-[40px] lg:px-[60px]'>
         <Navbar />
@@ -51,15 +58,15 @@ function DashboardPublicPage() {
     return (
       <div className='flex flex-col gap-5 mb-5' >
         <section className='flex flex-col w-full bg-lm-bg px-[30px] md:px-[40px] lg:px-[60px] gap-3'>
-          <ToastContainer stacked />
           {/* Navbar */}
           <Navbar active={"dashboard"}></Navbar>
+          <ToastContainer stacked />
 
 
           <div className='flex flex-col md:flex-row w-full gap-3 md:gap-3'>
             <section className='order-1 md:order-2 flex flex-col w-full md:w-[300px] lg:w-[400px] gap-2'>
               {/* Penulis */}
-              <Public />
+              <Public data={profile} />
 
               {/* Total Berita Disukai dan Disimpan */}
               <div className="flex flex-row md:flex-col lg:flex-row justify-between items-center w-full gap-2">
@@ -67,14 +74,14 @@ function DashboardPublicPage() {
                   <img src={iconLike} alt="" className='size-8' />
                   <div className=''>
                     <h1 className='font-mw font-medium text-base'>Disukai</h1>
-                    <h1 className='font-ws font-medium text-base'><span className='text-2xl'>2 </span>Berita</h1>
+                    <h1 className='font-ws font-medium text-base'><span className='text-2xl'>{countLike}</span>Berita</h1>
                   </div>
                 </div>
                 <div className='flex flex-row gap-2 items-start p-2.5 bg-lm-primary text-lm-text rounded-md w-full'>
                   <img src={iconSave} alt="" className='size-8' />
                   <div className=''>
                     <h1 className='font-mw font-medium text-base'>Disimpan</h1>
-                    <h1 className='font-ws font-medium text-base'><span className='text-2xl'>2 </span>Berita</h1>
+                    <h1 className='font-ws font-medium text-base'><span className='text-2xl'>{countSave} </span>Berita</h1>
                   </div>
                 </div>
               </div>
@@ -89,9 +96,15 @@ function DashboardPublicPage() {
                   <Link to={'/public/like'} className='font-ws font-medium text-sm'>Lihat lainnya</Link>
                 </div>
                 {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2'> */}
-                <CardPublic></CardPublic>
-                <CardPublic></CardPublic>
-                {/* </div> */}
+                {
+                  (disukai.length > 0) ?
+                    disukai.map((item, index) => (
+                      <CardPublic key={index} data={item} />
+                    )) :
+                    <h1 className="font-mw text-center text-gray-500 mb-5">
+                      Data tidak ada
+                    </h1>
+                }
               </section>
 
               {/* Berita Disimpan */}
@@ -101,9 +114,17 @@ function DashboardPublicPage() {
                   <Link to={'/public/save'} className='font-ws font-medium text-sm'>Lihat lainnya</Link>
                 </div>
                 {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2'> */}
-                <CardPublic></CardPublic>
-                <CardPublic></CardPublic>
                 {/* </div> */}
+
+                {
+                  (disimpan.length > 0) ?
+                    disimpan.map((item, index) => (
+                      <CardPublic key={index} data={item} />
+                    )) :
+                    <h1 className="font-mw text-center text-gray-500 mb-5">
+                      Data tidak ada
+                    </h1>
+                }
 
               </section>
             </section>
