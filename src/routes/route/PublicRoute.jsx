@@ -13,7 +13,7 @@ const PublicRoutes = () => (
     <Route path="" element={<DashboardPublicPage />} />
     <Route path="like" element={<LikeNewsPage />} />
     <Route path="save" element={<SaveNewsPage />} />
-    <Route path="edit-account" element={<EditAccountPage />} />
+    <Route path="edit-account/:id_user" element={<EditAccountPage />} />
 
      {/* Not Found Page */}
     <Route path="*" element={<NotFoundPage />} />

@@ -11,7 +11,7 @@ const InternRoutes = () => (
   <Routes>
     <Route path="" element={<DashboardInternPage />} />
     <Route path="write-news" element={<WriteNewsPage />} />
-    <Route path="edit-account" element={<EditAccountPage />} />
+    <Route path="edit-account/:id_intern" element={<EditAccountPage />} />
 
     {/* Not Found Page */}
     <Route path="*" element={<NotFoundPage />} />

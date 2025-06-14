@@ -21,7 +21,7 @@ const AdminRoutes = () => (
     <Route path="mark-intern/:id_user" element={< MarkUserPage />} />
     <Route path="task" element={< TaskPage />} />
     <Route path="edit-user/:id_user" element={< EditUserPage />} />
-    <Route path="edit-account" element={< EditAccountPage />} />
+    <Route path="edit-account/:id_user" element={< EditAccountPage />} />
 
     {/* Not Found Page */}
     <Route path="*" element={<NotFoundPage />} />

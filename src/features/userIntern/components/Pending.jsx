@@ -22,12 +22,14 @@ function Pending({ data }) {
       <HeadingDua label={"Pending"} />
       <section className='flex flex-col w-full gap-2 mt-2'>
         {
-          data.map((item, index) => (
-            <ItemPending key={index} judul={item.title} status={statusFormat(item.status)}></ItemPending>
-          ))
+          data.length > 0 ?
+            data.map((item, index) => (
+              <ItemPending key={index} judul={item.title} status={statusFormat(item.status)}></ItemPending>
+            )) :
+            <p className="text-center text-sm text-gray-500">
+              Tidak ada data
+            </p>
         }
-        {/* <ItemPending judul={"Pembuatan Berita Tema Teknologi"} status={"Review"}></ItemPending>
-        <ItemPending judul={"Pembuatan Berita Bermakna"} status={"Review"}></ItemPending> */}
       </section>
     </section>
   )

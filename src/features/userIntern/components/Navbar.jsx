@@ -1,20 +1,33 @@
-import React from 'react'
 import { useState } from 'react';
 import Logo from '../../../assets/icons/icon-logo.svg';
 import IconBurger from '../../../assets/icons/navbar/icon-burgerMenu.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuth from '../../auth/api/useAuth';
 
 function Navbar({ active }) {
+  const { logout } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const [click, setClick] = useState(false);
+
   const handleClick = () => {
     setClick(!click)
   }
+
+  const handleLogout = async () => {
+    setLoading(true);
+    await logout();
+    navigate('/login', { replace: true });
+    setLoading(false);
+  };
 
   return (
     <nav className='flex flex-col gap-2.5 items-center justify-between bg-abu p-2.5 py-2 shadow-lg'>
       <div className='flex items-center justify-between w-full'>
         {/* LOGO */}
-        <img src={Logo} alt="Logo WinniCode" className='w-[152px] md:w-[209px] lg:w-[228px]' />
+        <Link to={'/'}>
+          <img src={Logo} alt="Logo WinniCode" className='w-[152px] md:w-[209px] lg:w-[228px]' />
+        </Link>
 
         {/* KETIKA DESKTOP */}
         <div className='hidden md:flex items-center py-2 gap-2 w-full justify-between'>
@@ -28,7 +41,7 @@ function Navbar({ active }) {
             </div>
           </div>
 
-          <Link to={'/login'} className='py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] cursor-pointer'>Logout</Link>
+          <Link onClick={handleLogout} className='py-2.5 px-5 bg-dm-primary text-dm-text font-ws font-semibold  text-sm  rounded-[10px] cursor-pointer'>{loading ? 'Loading...' : 'Logout'}</Link>
         </div>
 
         {/* BUGER MENU */}

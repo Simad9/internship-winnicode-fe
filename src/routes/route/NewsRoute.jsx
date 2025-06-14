@@ -15,7 +15,7 @@ const NewsRoutes = () => (
     <Route path=":newsId" element={<NewsDetailPage />} />
     <Route path="page" element={<AnotherNewsPage />} />
     <Route path="search" element={<SearchNewsPage />} />
-    <Route path="magang/:userId" element={<InternNewsPage />} />
+    <Route path="magang/:id_user" element={<InternNewsPage />} />
 
     {/* Not Found Page */}
     <Route path="*" element={<NotFoundPage />} />

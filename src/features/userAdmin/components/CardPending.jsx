@@ -1,19 +1,40 @@
 import React from 'react'
 import Button from '../../../components/Button'
+import { formatDate } from '../../../utils/Formarter'
+import { updateReviewNews } from '../api/userAdminAPI'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
-function CardPending() {
+
+function CardPending({ data }) {
+  const navigate = useNavigate();
+
+  const approveNews = async () => {
+    try {
+      const dataForm = {
+        id_news: data.id_news,
+        status: "approved",
+      }
+      await updateReviewNews(data.id_news, dataForm);
+      toast.success('Berita berhasil disetujui');
+      navigate(0);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className='p-2 bg-lm-primary items-center rounded-md flex flex-col lg:flex-row gap-3'>
-      <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cover Berita" className='w-full lg:w-5/12 h-[170px] md:h-[140px] lg:h-[170px] object-cover rounded-md' />
+      <img src={data.image} alt="Cover Berita" className='w-full lg:w-5/12 h-[170px] md:h-[140px] lg:h-[170px] object-cover rounded-md' />
       <div className='flex flex-col lg:flex-row gap-2 justify-center items-center md:items-start lg:items-center w-full'>
         <div className='flex flex-col gap-0.5'>
-          <h3 className='font-mw font-normal text-sm text-kategori-accs'>Pendidikan</h3>
-          <h1 className='font-ws font-semibold text-xl md:text-base lg:text-xl'>Mahasiswa Rancang Aplikasi Edukasi untuk Daerah 3T</h1>
-          <h1 className='font-mw  font-normal text-sm '>Indra Permana - 01/05/2025</h1>
+          <h3 className='font-mw font-normal text-sm text-kategori-accs'>{data.category.category}</h3>
+          <h1 className='font-ws font-semibold text-xl md:text-base lg:text-xl'>{data.title}</h1>
+          <h1 className='font-mw  font-normal text-sm '>{data.author.name} - {formatDate(data.created_at)}</h1>
         </div>
         <div className='flex gap-1 w-full lg:w-7/12 lg:flex-col'>
-          <Button to={"/news/2"} label={"Terima"}></Button>
-          <Button to={"/news/2"} label={"Baca Berita"}></Button>
+          <Button onClick={approveNews} label={"Terima"}></Button>
+          <Button to={`/news/${data.id_news}`} label={"Baca Berita"}></Button>
         </div>
       </div>
     </div>

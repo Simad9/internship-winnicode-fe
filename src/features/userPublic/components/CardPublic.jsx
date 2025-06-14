@@ -14,7 +14,7 @@ function CardPublic({ data }) {
           <h3 className='font-mw font-normal text-sm text-kategori-accs'>{dataNews.category.category}</h3>
           <h1 className='font-ws font-semibold text-xl md:text-sm lg:text-xl'>{dataNews.title}</h1>
           <div className='line-clamp-2 md:line-clap-3 lg:line-clamp-3 h-10 md:h-8 lg:h-16'>
-            <p className='font-mw font-normal text-sm md:text-[12px] lg:text-base leading-5 md:leading-4 lg:leading-[22px]' dangerouslySetInnerHTML={{ __html: dataNews.content }}></p>
+            <p className='font-mw font-normal text-sm md:text-[12px] lg:text-base leading-5 md:leading-4 lg:leading-[22px]' dangerouslySetInnerHTML={{ __html: data.content }}></p>
           </div>
         </div>
         <div className='flex flex-row gap-2 justify-between items-center w-full'>

@@ -1,31 +1,27 @@
 ## To Do List : Gabungin dengan BE
 
-#### Tambahan
-
-- Buat kalo udah masuk, kasih gambar dan nama. Terus buat logo logoutnya (Navbar update)
-- Detail Page (Harus login dulu)
+Gabungin Tapi Masih GET dulu, alias untuk tampilan data
 
 ### User Public
 
-- [] Dashboard
-- [ ] Edit Profile
-- [ ] Like News
-- [ ] Save News
+- [x] Dashboard
+- [x] Edit Profile
+- [x] Like News
+- [x] Save News
 
 ### User Intern
 
-- [ ] Dashboard
-- [ ] Edit Profile
-- [ ] Write News (tinggal responsive)
+- [x] Dashboard
+- [x] Edit Profile
+- [x] Write News
 
 ### User Admin
 
-- [ ] Dashboard
+- [x] Dashboard
 - [ ] Edit Account
-- [ ] Edit Profile
-- [ ] Pending News
+- [x] Edit Profile
+- [x] Pending News
 - [ ] Control Account
-- [ ] Mark User
+- [x] Mark User
 - [ ] Review Page
 - [ ] Task Page
-

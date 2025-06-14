@@ -4,7 +4,7 @@ import iconPassword from '../../../assets/icons/form/icon-password.svg';
 import Button from '../components/Button';
 import { useState } from 'react';
 import { useLogin } from '../hooks/useLogin';
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { Link } from 'react-router-dom';
 
 function LoginPage() {
@@ -19,7 +19,11 @@ function LoginPage() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await login(data);
+    try {
+      await login(data);
+    } catch (error) {
+      toast.error(error);
+    }
   }
 
   return (

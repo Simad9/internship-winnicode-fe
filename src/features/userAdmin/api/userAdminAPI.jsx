@@ -9,13 +9,13 @@ export const dashboard = async () => {
 
 // Approve Category
 export const approveReqCategory = async (id_category) => {
-  const response = await axios.put(`${API_URL}/admin/approve-category/${id_category}`);
+  const response = await axios.put(`${API_URL}/admin/dashboard/approve-category/${id_category}`);
   return response.data;
 }
 
 // Hapus Category
 export const deleteCategory = async (id_category) => {
-  const response = await axios.delete(`${API_URL}/admin/delete-category/${id_category}`);
+  const response = await axios.delete(`${API_URL}/admin/dashboard/delete-category/${id_category}`);
   return response.data;
 }
 

@@ -10,7 +10,7 @@ function Public({ data }) {
       <div className='flex flex-col gap-3 justify-center items-center md:items-center bg-lm-primary p-4 rounded-md'>
         <div className='flex flex-col justify-center items-center'>
           <img src={data.profile_picture} alt="" className='size-[70px] rounded-md obeject-cover' />
-          <h1 className='font-ws font-semibold text-[20px]'>User</h1>
+          <h1 className='font-ws font-semibold text-[20px]'>{data.name}</h1>
         </div>
         <div className='flex flex-col items-start w-full'>
           <div className='flex flex-row items-center justify-start'>
@@ -22,7 +22,7 @@ function Public({ data }) {
             <h3 className='truncate'>: {`${data.email}`}</h3>
           </div>
         </div>
-        <Button to="/public/edit-account" label="Edit Akun" />
+        <Button to={`/public/edit-account/${data.id_user}`} label="Edit Akun" />
       </div>
     </section>
   )

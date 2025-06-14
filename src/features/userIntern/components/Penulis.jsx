@@ -34,7 +34,7 @@ function Penulis({ data }) {
           <p>Prodi : {data.major} </p>
           <p>Tanggal Magang : {internDate(data.internship_date)} </p>
         </div>
-        <Button to="/intern/edit-account" label="Edit Akun" />
+        <Button to={`/intern/edit-account/${data.id_user}`} label="Edit Akun" />
       </div>
     </section>
   )
