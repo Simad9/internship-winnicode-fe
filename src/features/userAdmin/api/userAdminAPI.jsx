@@ -50,8 +50,20 @@ export const updateMarkIntern = async (id_magang, data) => {
 }
 
 // Edit Akun
+// -- Ambil Akun
+export const getUserByUsername = async (username) => {
+  const response = await axios.get(`${API_URL}/getUsername/${username}`);
+  return response.data;
+}
+
+export const getUserById = async (id_user) => {
+  const response = await axios.get(`${API_URL}/getUserById/${id_user}`);
+  return response.data;
+}
+
+// Edit Akun
 export const editAkun = async (data) => {
-  const response = await axios.put(`${API_URL}/admin/edit-account`, data);
+  const response = await axios.put(`${API_URL}/intern/edit-account`, data);
   return response.data;
 }
 
@@ -59,6 +71,11 @@ export const editAkun = async (data) => {
 // Melihat Tugas
 export const task = async () => {
   const response = await axios.get(`${API_URL}/admin/task`);
+  return response.data;
+}
+
+export const taskById = async (id_task) => {
+  const response = await axios.get(`${API_URL}/admin/task/${id_task}`);
   return response.data;
 }
 
@@ -82,7 +99,7 @@ export const deleteTask = async (id_task) => {
 
 // --- Kontrol Akun ---
 // Ambil  Akun
-export const akunALl = async () => {
+export const akunAll = async () => {
   const response = await axios.get(`${API_URL}/admin/control-account/`);
   return response.data;
 }

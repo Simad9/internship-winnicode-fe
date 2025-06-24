@@ -98,7 +98,7 @@ function DashboardAdminPage() {
                 <div className='w-full'>
                   <HeadingDua label={"Kategori Berita"}></HeadingDua>
                   <select id="kategori" className="bg-lm-primary border-1 border-abu-text font-mw text-abut-text text-sm rounded-md focus:ring-abu-text focus:border-abu-text w-full p-2.5 mt-2">
-                    <option value="">Pilih Kategori</option>
+                    <option value="">Lihat Kategori</option>
                     {
                       kategori.map((item) => (
                         <option key={item.id_category} value={item.id_category}>{item.category}</option>

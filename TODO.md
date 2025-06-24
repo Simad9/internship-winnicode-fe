@@ -21,7 +21,7 @@ Gabungin Tapi Masih GET dulu, alias untuk tampilan data
 - [ ] Edit Account
 - [x] Edit Profile
 - [x] Pending News
-- [ ] Control Account
+- [x] Control Account
 - [x] Mark User
-- [ ] Review Page
-- [ ] Task Page
+- [x] Review Page
+- [x] Task Page

@@ -31,6 +31,27 @@ export const formatDate = (dateString) => {
   return `${day}/${month}/${year}`;
 }
 
+
+
+export const formatDateTimeReview = (dateString) => {
+  const date = new Date(dateString);
+
+  // Ubah waktu ke zona waktu lokal sesuai kebutuhan
+  // Kalau ingin pakai waktu WIB (UTC+7), bisa pakai manual offset
+  const utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+  const wibTime = new Date(utc + (7 * 60 * 60000)); // tambah 7 jam
+
+  const dayName = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'][wibTime.getDay()];
+  const day = String(wibTime.getDate()).padStart(2, '0');
+  const month = String(wibTime.getMonth() + 1).padStart(2, '0'); // bulan mulai 0
+  const year = wibTime.getFullYear();
+
+  const hours = String(wibTime.getHours()).padStart(2, '0');
+  const minutes = String(wibTime.getMinutes()).padStart(2, '0');
+
+  return `${dayName}, ${day}/${month}/${year} - ${hours}:${minutes} WIB`;
+}
+
 export const interntMonth = (dateStrng) => {
   const date = new Date(dateStrng);
   const now = new Date();

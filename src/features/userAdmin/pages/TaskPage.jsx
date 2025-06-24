@@ -8,13 +8,14 @@ import LoadingFetch from '../../../components/LoadingFetch'
 // Service
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { task } from '../api/userAdminAPI'
+import { task, taskById } from '../api/userAdminAPI'
 import { toast, ToastContainer } from 'react-toastify'
 import { internDate } from '../../../utils/Formarter'
 
 function TaskPage() {
   const [loading, setLoading] = useState(false);
   const [taskData, setTaskData] = useState([]);
+  const [modeEdit, setModeEdit] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -36,6 +37,26 @@ function TaskPage() {
       setLoading(false);
     }
   };
+
+  const ambilData = async (id) => {
+    try {
+      const response = await taskById(id);
+      console.log('Response dari API:', response);
+      if (response) {
+        const task = response.data;
+        document.getElementById('notes').value = task.task_title;
+        const date = new Date(task.task_deadline);
+        const year = date.getFullYear();
+        const month = `0${date.getMonth() + 1}`.slice(-2);
+        const day = `0${date.getDate()}`.slice(-2);
+        document.getElementById('deadline').value = `${year}-${month}-${day}`;
+        setModeEdit(true);
+      }
+    } catch (error) {
+      toast.error('Gagal mengambil data tugas. Silakan coba lagi.');
+    }
+  }
+
 
   console.log(taskData);
 
@@ -64,11 +85,12 @@ function TaskPage() {
                 <textarea name="notes" id="notes" className='w-full border-1 border-abu-text rounded-md p-2 mt-2 font-mw text-base text-lm-text h-24' placeholder='Isi Tugas'></textarea>
                 <input
                   type="date"
-                  id="tugas1"
-                  name="tugas1"
+                  id="deadline"
+                  name="deadline"
+                  required
                   class="bg-lm-primary border-1 border-abu-text text-lm-text text-sm md:text-[18ox] font-ws rounded-lg focus:ring-dm-primary focus:border-dm-primary focus:text-lm-text block w-full p-2"
                   placeholder="DD/MM/YYYY" />
-                <Button label={"Tambah Tugas"}></Button>
+                <Button label={modeEdit ? "Edit Tugas" : "Tambah Tugas"}></Button>
               </div>
 
 
@@ -98,7 +120,7 @@ function TaskPage() {
                       {
                         taskData.length > 0 ?
                           taskData.map((task) => (
-                            <tr key={task.task_id} class="odd:bg-gray-100 even:bg-gray-200  font-ws font-medium text-lm-text">
+                            <tr key={task.id_task} class="odd:bg-gray-100 even:bg-gray-200  font-ws font-medium text-lm-text">
                               <th scope="row" class="px-6 py-2 font-medium">
                                 {task.task_title}
                               </th>
@@ -106,7 +128,7 @@ function TaskPage() {
                                 {internDate(task.task_deadline)}
                               </td>
                               <td class="px-0 py-2 flex justify-center gap-3">
-                                <Link to={`/admin/task/edit/${task.task_id}`} className='flex items-center justify-center gap-1'>
+                                <Link onClick={async () => await ambilData(task.id_task)} className='flex items-center justify-center gap-1'>
                                   <img src={iconEdit} alt="" />
                                   <p>Edit</p>
                                 </Link>

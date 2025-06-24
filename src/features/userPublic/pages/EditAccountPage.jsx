@@ -17,7 +17,7 @@ import { getUserByUsername, editAkun } from '../api/userPublicAPI'
 function EditAccountPage() {
   const [loading, setLoading] = useState(false);
   const [menyimpan, setMenyimpan] = useState(false);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const usernameData = localStorage.getItem('userName');
   const [nama, setNama] = useState('');
   const [username, setUsername] = useState('');

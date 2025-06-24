@@ -16,10 +16,10 @@ const AdminRoutes = () => (
   <Routes>
     <Route path="" element={<DashboardAdminPage />} />
     <Route path="pending-news" element={< PendingNewsPage />} />
-    <Route path="review-news/:id_news" element={< ReviewPage />} />
-    <Route path="control-account" element={< ControlAccountPage />} />
-    <Route path="mark-intern/:id_user" element={< MarkUserPage />} />
     <Route path="task" element={< TaskPage />} />
+    <Route path="control-account" element={< ControlAccountPage />} />
+    <Route path="review-news/:id_news" element={< ReviewPage />} />
+    <Route path="mark-intern/:id_user" element={< MarkUserPage />} />
     <Route path="edit-user/:id_user" element={< EditUserPage />} />
     <Route path="edit-account/:id_user" element={< EditAccountPage />} />
 

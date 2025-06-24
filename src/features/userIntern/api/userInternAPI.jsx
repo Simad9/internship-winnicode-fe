@@ -26,6 +26,13 @@ export const hapusBerita = async (id_news) => {
 }
 
 // Edit Akun
+// -- Ambil Akun
+export const getUserByUsername = async (username) => {
+  const response = await axios.get(`${API_URL}/getUsername/${username}`);
+  return response.data;
+}
+
+// Edit Akun
 export const editAkun = async (data) => {
   const response = await axios.put(`${API_URL}/intern/edit-account`, data);
   return response.data;

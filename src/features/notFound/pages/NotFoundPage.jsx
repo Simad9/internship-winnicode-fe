@@ -19,7 +19,7 @@ function NotFoundPage() {
 
           <div className="mt-6 space-x-2 w-full">
             <Link to="/news" className="bg-dm-primary text-dm-text px-4 md:px-6 py-2 text-sm lg:text-xl rounded-md cursor-pointer">Beranda</Link>
-            <Link to="wa.me/+6282135322025" target='_blank' className="border border-dm-primary text-sm lg:text-xl px-4 nd:px-6 py-2 rounded-md cursor-pointer">Laporkan Kesalahan</Link>
+            <a href="https://wa.me/+6282135322025" target='_blank' className="border border-dm-primary text-sm lg:text-xl px-4 md:px-6 py-2 rounded-md cursor-pointer">Laporkan Kesalahan</a>
           </div>
         </main>
       </div>

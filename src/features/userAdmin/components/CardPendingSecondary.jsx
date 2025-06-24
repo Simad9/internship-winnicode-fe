@@ -36,7 +36,7 @@ function CardPendingSecondary({ data }) {
         </div>
         <div className='flex gap-1 w-full lg:w-4/12 lg:flex-col'>
           <Button onClick={approveNews} label={"Terima"}></Button>
-          <Button to={`/news/${data.id_news}`} label={"Baca Berita"}></Button>
+          <Button to={`/admin/review-news/${data.id_news}`} label={"Baca Berita"}></Button>
         </div>
       </div>
     </div>
