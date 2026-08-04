@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar'
 import HeadingDua from '../../../components/HeadingDua'
-import fotoProfile from '../../../assets/img/profile.jpg'
+// import fotoProfile from '../../../assets/img/profile.jpg'
 import iconNamaLengkap from '../../../assets/icons/form/icon-namaLengkap.svg'
 import iconUsername from '../../../assets/icons/form/icon-profile.svg'
 import iconEmail from '../../../assets/icons/form/icon-email.svg'

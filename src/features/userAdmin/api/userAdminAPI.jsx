@@ -4,6 +4,7 @@ const API_URL = import.meta.env.VITE_BE_BASE_URL;
 // Dashboard
 export const dashboard = async () => {
   const response = await axios.get(`${API_URL}/admin/dashboard`);
+  console.log(response.data);
   return response.data;
 }
 
@@ -124,13 +125,13 @@ export const akunAllIntern = async () => {
 
 // Edit Akun Intenrn
 export const editAkunIntern = async (id_intern, data) => {
-  const response = await axios.put(`${API_URL}/admin/control-account/intern${id_intern}`, data);
+  const response = await axios.put(`${API_URL}/admin/control-account/intern/${id_intern}`, data);
   return response.data;
 }
 
 // Hapus Akun Intern
 export const deleteAkunIntern = async (id_intern) => {
-  const response = await axios.delete(`${API_URL}/admin/control-account/intern${id_intern}`);
+  const response = await axios.delete(`${API_URL}/admin/control-account/intern/${id_intern}`);
   return response.data;
 }
 
@@ -142,13 +143,13 @@ export const akunAllUser = async () => {
 
 // Edit Akun User
 export const editAkunUser = async (id_user, data) => {
-  const response = await axios.put(`${API_URL}/admin/control-account/user${id_user}`, data);
+  const response = await axios.put(`${API_URL}/admin/control-account/user/${id_user}`, data);
   return response.data;
 }
 
 // Hapus Akun User
 export const deleteAkunUser = async (id_user) => {
-  const response = await axios.delete(`${API_URL}/admin/control-account/user${id_user}`);
+  const response = await axios.delete(`${API_URL}/admin/control-account/user/${id_user}`);
   return response.data;
 }
 

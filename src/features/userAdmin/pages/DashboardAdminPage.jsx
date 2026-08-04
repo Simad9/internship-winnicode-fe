@@ -42,7 +42,8 @@ function DashboardAdminPage() {
         toast.error('Gagal memuat data berita. Silakan coba lagi.');
       }
     } catch (error) {
-      toast.error('Gagal memuat data berita. Silakan coba lagi.');
+      // toast.error('Gagal memuat data berita. Silakan coba lagi.');
+      toast.error('message : ' + error.message);
     } finally {
       setLoading(false);
     }

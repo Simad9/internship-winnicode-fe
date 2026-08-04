@@ -21,6 +21,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (data) => {
     try {
       const res = await axios.post(`${BASE_URL}/login`, data);
+      console.log("Login response:", res);
 
       // Simpan Statee
       setAccessToken(res.data.accessToken);
@@ -86,6 +87,7 @@ export const AuthProvider = ({ children }) => {
 };
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuthContext = () => {
   const context = useContext(AuthContext);
   if (!context) {
