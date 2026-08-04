@@ -10,7 +10,13 @@ export const enkripsiData = (data) => {
 
 // Fungsi untuk mendekripsi data yang disimpan di localStorage
 export const dekripsiData = (encryptedData) => {
-  const bytes = CryptoJS.AES.decrypt(encryptedData, encryptionKey);
-  const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
-  return decryptedData ? JSON.parse(decryptedData) : null;
+  if (!encryptedData || typeof encryptedData !== "string") return null;
+  try {
+    const bytes = CryptoJS.AES.decrypt(encryptedData, encryptionKey);
+    const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+    return decryptedData ? JSON.parse(decryptedData) : null;
+  } catch (error) {
+    console.error("Gagal mendekripsi data:", error);
+    return null;
+  }
 };

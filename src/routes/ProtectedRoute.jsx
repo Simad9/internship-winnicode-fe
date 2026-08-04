@@ -53,9 +53,10 @@ const ProtectedRoute = ({ children, requiredRole }) => {
     return <LoadingFetch />; // Menunggu pengecekan selesai
   }
 
-  // Jika role tidak sesuai dengan yang dibutuhkan, arahkan ke halaman unauthorized
-  if (isAuthenticated && dekripsiData(role) !== requiredRole) {
-    return <Navigate to="/unauthorized" replace />;
+  // Jika role tidak sesuai dengan yang dibutuhkan, arahkan ke halaman login/unauthorized
+  const userRole = dekripsiData(role);
+  if (isAuthenticated && (!userRole || userRole !== requiredRole)) {
+    return <Navigate to={!userRole ? "/login" : "/unauthorized"} replace />;
   }
 
   // Jika perlu mengarahkan pengguna ke halaman lain

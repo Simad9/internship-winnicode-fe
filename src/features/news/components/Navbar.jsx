@@ -23,7 +23,6 @@ function Navbar() {
       setUsername(storedUsername);
       setPhoto(storedPhoto);
       setRole(storedRole);
-      pathRole();
     }
   }, []);
 
@@ -31,8 +30,10 @@ function Navbar() {
 
   const handleSearch = () => navigate(`/news/search?q=${search}`);
 
-  const pathRole = () => {
-    switch (dekripsiData(role)) {
+  const pathRole = (roleValue = role) => {
+    if (!roleValue) return '';
+    const decrypted = dekripsiData(roleValue);
+    switch (decrypted) {
       case 'admin':
         return '/admin';
       case 'public':

@@ -25,3 +25,5 @@ dist-ssr
 
 # Tambahan
 .env
+TASK.md
+TASKLOG.md
